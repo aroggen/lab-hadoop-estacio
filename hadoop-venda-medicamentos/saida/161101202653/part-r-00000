@@ -1,7 +1,3 @@
-# hadoop-venda-medicamentos
-
-Rode o chamador para descubrir o melhor preço
-
 ADEFORTE	preço=10.0, data_venda='01/02/2016 10:10
 ANADOR	preço=75.0, data_venda='01/02/2016 16:00
 ASPIRINA	preço=5.0, data_venda='01/01/2016 18:40
@@ -11,4 +7,3 @@ DORFLEX	preço=90.0, data_venda='01/01/2016 11:30
 OMEPRAZOL	preço=2.0, data_venda='01/01/2016 18:40
 ROACUTAN	preço=4.0, data_venda='01/01/2016 12:30
 VIAGRA	preço=90.0, data_venda='01/01/2016 17:30
-
