@@ -17,9 +17,9 @@ public class VendaMapper extends Mapper<LongWritable, Text, Text, Venda> {
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
         if (line.length() == 32) {
-            String product = line.substring(12, 27).replaceAll("#", "");
+            String produto = line.substring(12, 27).replaceAll("#", "");
             Integer price = Integer.parseInt(line.substring(line.length() - 5));
-            context.write(new Text(product), new Venda(price.doubleValue(), formatDate(line.substring(0, 12))));
+            context.write(new Text(produto), new Venda(price.doubleValue(), formatDate(line.substring(0, 12))));
         }
     }
 

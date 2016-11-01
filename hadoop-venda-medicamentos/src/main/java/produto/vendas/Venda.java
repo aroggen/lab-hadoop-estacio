@@ -10,21 +10,21 @@ import java.io.IOException;
  * Created by Alexandre Roggen on 29/10/16.
  */
 public class Venda implements Writable {
-        private double price;
+        private double preco;
         private String data;
 
     public Venda() {
-            set(price, data);
+            set(preco, data);
         }
-    public Venda(double price, String data) {
-            set(price, data);
+    public Venda(double preco, String data) {
+            set(preco, data);
         }
     public void set(double first, String second) {
-        this.price = first;
+        this.preco = first;
         this.data = second;
     }
-    public double getPrice() {
-        return price;
+    public double getPreco() {
+        return preco;
     }
     public String getData() {
         return data;
@@ -32,12 +32,12 @@ public class Venda implements Writable {
 
     @Override
     public void write(DataOutput out) throws IOException {
-        out.writeDouble(price);
+        out.writeDouble(preco);
         out.writeUTF(data);
     }
     @Override
     public void readFields(DataInput in) throws IOException {
-        price = in.readDouble();
+        preco = in.readDouble();
         data = in.readUTF();
     }
 
@@ -45,7 +45,7 @@ public class Venda implements Writable {
     public int hashCode() {
         int result;
         long temp;
-        temp = Double.doubleToLongBits(price);
+        temp = Double.doubleToLongBits(preco);
         result = (int) (temp ^ (temp >>> 32));
         result = 31 * result + data.hashCode();
         return result;
@@ -56,15 +56,13 @@ public class Venda implements Writable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Venda venda = (Venda) o;
-        if (Double.compare(venda.price, price) != 0) return false;
+        if (Double.compare(venda.preco, preco) != 0) return false;
         return data.equals(venda.data);
 
     }
 
     @Override
     public String toString() {
-        return "" +
-                "preço=" + price +
-                ", data_venda='" + data;
+        return "preço=" + preco + ", data_venda='" + data;
     }
 }
